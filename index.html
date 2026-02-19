@@ -17,11 +17,8 @@
         .bg-gradient-blue {
             background: linear-gradient(135deg, #003366 0%, #00509d 100%);
         }
-        .text-anomaly-gold {
-            color: #ffcc00;
-        }
         .book-shadow {
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
         }
         .cta-glow {
             transition: all 0.3s ease;
@@ -30,12 +27,21 @@
             box-shadow: 0 0 20px rgba(0, 80, 157, 0.4);
             transform: translateY(-2px);
         }
+        /* Animation for the book */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(2deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(2deg); }
+        }
+        .float-book {
+            animation: float 6s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="bg-white text-slate-800">
 
     <!-- Navbar -->
-    <nav class="py-6 px-4 border-b border-slate-100">
+    <nav class="py-6 px-4 border-b border-slate-100 sticky top-0 bg-white/90 backdrop-blur-md z-50">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <span class="font-bold text-xl tracking-tighter text-blue-900">BECOME THE ANOMALY</span>
             <a href="https://selar.com/565fz38364" class="hidden md:block bg-blue-700 text-white px-6 py-2 rounded-full font-bold text-sm cta-glow">GET IT NOW</a>
@@ -43,7 +49,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="pt-16 pb-24 px-4 bg-slate-50">
+    <header class="pt-16 pb-24 px-4 bg-slate-50 overflow-hidden">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div class="order-2 md:order-1">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-blue-950 leading-tight mb-6">
@@ -52,18 +58,27 @@
                 <p class="text-lg text-slate-600 mb-8 leading-relaxed">
                     The definitive blueprint to deprogramming from the "average" life and becoming the high-performing outlier you were born to be.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4">
+                <div class="flex flex-col sm:flex-row gap-4 items-center md:items-start">
                     <!-- CTA Button 1 -->
-                    <a href="https://selar.com/565fz38364" class="bg-blue-700 text-white text-center px-8 py-4 rounded-lg font-bold text-xl cta-glow">
+                    <a href="https://selar.com/565fz38364" class="w-full sm:w-auto bg-blue-700 text-white text-center px-8 py-4 rounded-lg font-bold text-xl cta-glow">
                         GET IT NOW
                     </a>
-                    <p class="text-sm text-slate-400 mt-2 sm:mt-4 italic">Join the 1% today.</p>
+                    <div class="text-center md:text-left">
+                        <p class="text-sm text-slate-500 font-medium">Available as Instant Download</p>
+                        <div class="flex gap-1 mt-1 justify-center md:justify-start">
+                            <span class="text-yellow-400 text-xs">★★★★★</span>
+                            <span class="text-slate-400 text-xs">(Verified Readers)</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="order-1 md:order-2 flex justify-center">
+            <div class="order-1 md:order-2 flex justify-center relative">
+                <!-- Decorative background blob -->
+                <div class="absolute w-72 h-72 bg-blue-200 rounded-full blur-3xl opacity-30 -z-10 animate-pulse"></div>
+                
                 <!-- Book Cover Implementation -->
-                <div class="relative w-full max-w-sm">
-                    <img src="bECOMETHEANOMALY.jpg" alt="Become The Anomaly Book Cover" class="w-full h-auto book-shadow rounded-sm border-4 border-white transform rotate-2 hover:rotate-0 transition-transform duration-500" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x600?text=Become+The+Anomaly+Cover';">
+                <div class="relative w-full max-w-sm px-4">
+                    <img src="Become the anomaly.jpg" alt="Become The Anomaly Book Cover" class="w-full h-auto book-shadow rounded-sm border-2 border-slate-100 float-book transition-all duration-500 hover:scale-105" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x600?text=Become+The+Anomaly+Cover';">
                 </div>
             </div>
         </div>
@@ -75,23 +90,23 @@
             <h2 class="text-blue-600 font-bold uppercase tracking-widest text-sm mb-4">The Realization</h2>
             <h3 class="text-3xl md:text-4xl font-bold text-blue-950 mb-8">"I woke up at 3:00 AM and realized I was a ghost in my own life..."</h3>
             
-            <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+            <div class="space-y-6 text-lg text-slate-700 leading-relaxed text-justify">
                 <p>
-                    I had followed every "rule" in the book. I went to the right school, got the "stable" job, and said "yes" to everyone else's demands. On paper, I was doing fine. But inside? I felt like a passenger in my own life.
+                    I had followed every "rule" in the book. I went to the right school, got the "stable" job, and said "yes" to everyone else's demands. On paper, I was doing fine. But inside? I felt like a passenger in my own life, watching my potential drift away.
                 </p>
                 <p>
                     The scariest part wasn't the failure—it was the <strong>sameness</strong>. Most people are trapped in a script they didn't write, waiting for a permission slip that is never coming.
                 </p>
                 <div class="bg-blue-50 p-8 rounded-2xl border-l-8 border-blue-600 my-12">
-                    <p class="font-semibold italic text-blue-900 mb-4">Does this sound familiar?</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-start"><span class="text-red-500 mr-2">✕</span> You feel capable of 10x more, but you're stuck in a loop.</li>
-                        <li class="flex items-start"><span class="text-red-500 mr-2">✕</span> You're watching others achieve the success you know you deserve.</li>
-                        <li class="flex items-start"><span class="text-red-500 mr-2">✕</span> You're exhausted from trying to "fit in" when you were built to stand out.</li>
+                    <p class="font-bold italic text-blue-900 mb-4 text-xl">Does this sound familiar?</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><span class="text-red-500 font-bold mr-3">✕</span> You feel capable of 10x more, but you're stuck in a loop.</li>
+                        <li class="flex items-start"><span class="text-red-500 font-bold mr-3">✕</span> You're watching others achieve the success you know you deserve.</li>
+                        <li class="flex items-start"><span class="text-red-500 font-bold mr-3">✕</span> You're exhausted from trying to "fit in" when you were built to stand out.</li>
                     </ul>
                 </div>
                 <p>
-                    The "Safe Path" is the most dangerous place you can be. In a world of AI and rapid change, being "average" is a one-way ticket to being forgotten.
+                    The "Safe Path" is the most dangerous place you can be. In a world of AI and rapid change, being "average" is a one-way ticket to being forgotten. It's time to break the cycle.
                 </p>
             </div>
         </div>
@@ -102,12 +117,12 @@
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-blue-950 mb-4">Break the Script. Hack the Habit.</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto">"Become the Anomaly" is more than a book; it's a tactical manual for self-mastery.</p>
+                <p class="text-slate-500 max-w-2xl mx-auto italic">"Become the Anomaly" is more than a book; it's a tactical manual for total self-mastery.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Benefit 1 -->
-                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 hover:border-blue-200 transition-colors">
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 hover:border-blue-200 transition-all hover:-translate-y-2">
                     <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
                         <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
@@ -116,7 +131,7 @@
                 </div>
 
                 <!-- Benefit 2 -->
-                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 hover:border-blue-200 transition-colors">
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 hover:border-blue-200 transition-all hover:-translate-y-2">
                     <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
                         <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.040L3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622l-0.382-3.016z"></path></svg>
                     </div>
@@ -125,7 +140,7 @@
                 </div>
 
                 <!-- Benefit 3 -->
-                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 hover:border-blue-200 transition-colors">
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 hover:border-blue-200 transition-all hover:-translate-y-2">
                     <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6">
                         <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
@@ -146,7 +161,7 @@
             
             <div class="flex flex-col items-center">
                 <!-- CTA Button 2 -->
-                <a href="https://selar.com/565fz38364" class="bg-white text-blue-900 text-center px-12 py-5 rounded-full font-black text-2xl shadow-2xl hover:bg-yellow-400 hover:text-blue-950 transition-all transform hover:scale-110">
+                <a href="https://selar.com/565fz38364" class="bg-white text-blue-900 text-center px-12 py-5 rounded-full font-black text-2xl shadow-2xl hover:bg-blue-50 hover:text-blue-950 transition-all transform hover:scale-110">
                     GET IT NOW
                 </a>
                 <p class="mt-6 text-blue-200 text-sm font-semibold tracking-widest uppercase">Secured Checkout via Selar</p>
@@ -154,6 +169,7 @@
         </div>
         <!-- Decorative element -->
         <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-400 opacity-10 rounded-full"></div>
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-500 opacity-10 rounded-full"></div>
     </section>
 
     <footer class="py-12 px-4 text-center text-slate-400 text-sm border-t border-slate-100">
